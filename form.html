@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        
+    <form action="">
+        <div>
+        <label for="1">enter name</label>
+        <input type="text" placeholder="Enter name...." id="1" value="sai" readonly>
+        </div>
+        <div>
+        <label for="2">pass :</label>
+        <input id="2" type="password" placeholder="enter password">
+        </div>
+
+        <div>
+            <label>Email</label>
+            <input type="email" placeholder="enter email" required>
+        </div>
+        <div id="range">
+            <input type="range" onclick="Fun()" min="0" max="100" id="Myrange">
+        </div>
+
+        <div>
+        <div>
+            <label for="">gender</label>
+        </div>
+        <div>
+            <span>male</span>
+            <input type="radio" name="one" value="male"> 
+        </div>
+        <div>
+            <span>Female</span>
+            <input type="radio" name="one" value="female">
+        </div>
+        <div>
+            <span>other</span>
+            <input type="radio" name="one" value="other">
+        </div>
+        </div>
+
+        <div>
+                <label for="2">skills you have</label>
+                <input  id="2" type="radio"  name="11">
+                <span>java</span>
+                <input  id="2" type="radio" name="11">
+                <span>python</span>
+                <input  id="2" type="radio" name="11" >
+                <span>c++</span>
+        </div>
+        <div>
+            <input type="checkbox">
+            <span>hi hello pls check it</span>
+        </div>
+        <div>
+            <select>
+                <option>select river</option>
+                <option value="1">krishna</option>
+                <option value="1">godavari</option>
+                <option value="1">ganga</option>
+                <option value="1">kavari</option>
+                <option value="1">nasik</option>
+            </select>
+        </div>
+        <div>
+            <input type="file"  accept=".png">
+        </div>
+        <div>
+            <input type="date">
+        </div>
+        <div>
+            <input type="time">
+        </div>
+        <div>
+            <input type="color">
+        </div>
+        <div>
+            <textarea style="width: 800px;"></textarea>
+        </div>
+
+        <div>
+            <input type="number" pattern="${e}" placeholder="enter number">
+        </div>
+        <div>
+            <input type="tel" name="" maxlength="10" placeholder="tel phone number">
+        </div>
+        <div>
+            <input type="submit" value="submit">
+        </div>
+
+        <div>
+            <input type="reset" value="reset">
+        </div>
+    </form>
+
+    <script>
+        function Fun()
+        {
+          const a= document.getElementById("Myrange").innerHTML;
+            document.getElementById("Myrange").textContent=a;
+        }
+    </script>
+</body>
+</html>
