@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Document</title>
+    <style>
+        .container{
+            align-items: center;
+            padding-left: 250px;
+            margin-top: 300px;
+        }
+        .bdy{
+            background: linear-gradient(36deg,blue,rgb(11, 0, 128),rgb(20, 20, 19),rgb(203, 132, 132));
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100vw;
+            height: 100vh;
+        }
+ 
+
+    </style>
+</head>
+<body  class="bdy" >
+
+
+
+    <div class="container text-center" style="width: 100%; height: 100%;">
+        <div class="card" style="width: 70%;">
+
+            <div class="card-head bg-light mt-2"  style="color:black;">
+                   <h4>  <b> Age Calculator  </b></h4>
+            </div>
+            <div class="card-body">
+                <input type="date"  id="dd" class="form-control">
+            </div>
+              <div class="card-footer text-center">
+                    <button class="btn btn-primary" id="submit">submit</button>
+
+                    <h4 id="result"></h4>
+              </div>
+        </div>
+    </div>
+
+
+
+    <script src="./ageCalculator.js"></script>
+
+</body>
+</html>
