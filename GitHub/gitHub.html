@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Dynamic Form</title>
+    <style>
+        .form-container {
+            max-width: 500px;
+            margin: auto;
+            background-color: #474545;
+            padding: 20px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body class="bg-dark">
+
+
+    <div class="position-absolute top-50 start-50 translate-middle">
+
+<div class="form-container">
+    <h2 class="text-center text-light">Welcome to My Hub</h2>
+    <h6 class="text-center text-light">Let's get started</h6>
+
+    <form id="dynamicForm">
+     
+        <div id="nameSection" class="input-group mb-3">
+            <input id="name" class="form-control" name="name" placeholder="Enter name">
+            <button id="nextName" type="button" class="btn btn-primary">Next</button>
+        </div>
+
+     
+        <div id="emailSection" class="input-group mb-3" style="display: none;">
+            <input id="email" class="form-control"  name="email" placeholder="Enter Email">
+            <button id="nextEmail" type="button" class="btn btn-primary">Next</button>
+        </div>
+
+  
+        <div id="passwordSection" class="input-group mb-3" style="display: none;">
+            <input id="password" type="password" class="form-control" name="password" placeholder="Enter Password">
+            <button id="nextPassword" type="button" class="btn btn-primary">Next</button>
+        </div>
+
+ 
+        <div id="genderSection" class="input-group mb-3" style="display: none;">
+            <select id="gender" class="form-control">
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+            <button id="nextGender" type="button" class="btn btn-primary">Next</button>
+        </div>
+
+ 
+        <div id="phoneSection" class="input-group mb-3" style="display: none;">
+            <input id="phone" class="form-control" name="number" placeholder="Enter Phone Number">
+            <button id="nextPhone" type="button" class="btn btn-primary">Next</button>
+        </div>
+
+ 
+        <div id="addressSection" class="input-group mb-3" style="display: none;">
+            <textarea id="address" class="form-control" name="textarea" placeholder="Enter Address"></textarea>
+            <button id="submitButton" type="submit" class="btn btn-success">Submit</button>
+        </div>
+
+ 
+        <div id="resultContainer" class="mt-3 text-light"></div>
+    </form>
+</div>
+
+</div>
+
+<script>
+    document.getElementById('nextName').addEventListener('click', function () {
+        const nameInput = document.getElementById('name').value.trim();
+        if (nameInput !== '') {
+            document.getElementById('nameSection').style.display = 'none';
+            document.getElementById('emailSection').style.display = 'flex';
+        } else {
+            alert('Please enter your name before proceeding.');
+        }
+    });
+
+    document.getElementById('nextEmail').addEventListener('click', function () {
+        const emailInput = document.getElementById('email').value.trim();
+        if (emailInput !== '') {
+            document.getElementById('emailSection').style.display = 'none';
+            document.getElementById('passwordSection').style.display = 'flex';
+        } else {
+            alert('Please enter your email before proceeding.');
+        }
+    });
+
+    document.getElementById('nextPassword').addEventListener('click', function () {
+        const passwordInput = document.getElementById('password').value.trim();
+        if (passwordInput !== '') {
+            document.getElementById('passwordSection').style.display = 'none';
+            document.getElementById('genderSection').style.display = 'flex';
+        } else {
+            alert('Please enter your password before proceeding.');
+        }
+    });
+
+    document.getElementById('nextGender').addEventListener('click', function () {
+        const genderSelect = document.getElementById('gender').value;
+        if (genderSelect !== '') {
+            document.getElementById('genderSection').style.display = 'none';
+            document.getElementById('phoneSection').style.display = 'flex';
+        } else {
+            alert('Please select your gender before proceeding.');
+        }
+    });
+
+    document.getElementById('nextPhone').addEventListener('click', function () {
+        const phoneInput = document.getElementById('phone').value.trim();
+        if (phoneInput !== '') {
+            document.getElementById('phoneSection').style.display = 'none';
+            document.getElementById('addressSection').style.display = 'flex';
+        } else {
+            alert('Please enter your phone number before proceeding.');
+        }
+    });
+
+    document.getElementById('dynamicForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+ 
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value.trim();
+        const gender = document.getElementById('gender').value;
+        const phone = document.getElementById('phone').value.trim();
+        const address = document.getElementById('address').value.trim();
+
+ 
+        const resultContainer = document.getElementById('resultContainer');
+        resultContainer.innerHTML = `
+            <h3 class="text-light">Form Data:</h3>
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Password:</strong> ${password}</p>
+            <p><strong>Gender:</strong> ${gender}</p>
+            <p><strong>Phone Number:</strong> ${phone}</p>
+            <p><strong>Address:</strong> ${address}</p>
+        `;
+    });
+</script>
+
+
+<script src="./github.js"></script>
+
+</body>
+</html>
