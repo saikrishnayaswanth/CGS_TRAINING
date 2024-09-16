@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body class="bdy">
+
+    <p>it is Dynamic web page with change of background color</p>
+
+
+    <form>
+
+    <input type="color" id="selectColor">
+    <input type="button"  onclick="changeColor()" value="changeColor">
+
+    </form>
+
+
+    <script>
+        function changeColor() {
+            const color = document.getElementById("selectColor").value; 
+            console.log(color);
+            document.getElementsByClassName("bdy")[0].style.backgroundColor = color;
+        }
+    </script>
+
+
+
+</body>
+</html>
